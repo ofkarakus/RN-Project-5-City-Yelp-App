@@ -2,7 +2,7 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {Cities, Restaurants} from './pages';
+import {Countries, Metropolis} from './pages';
 
 const Stack = createStackNavigator();
 
@@ -16,12 +16,12 @@ const Router = () => {
         }}
       >
         <Stack.Screen 
-          name="CityList" 
-          component={Cities}          
+          name="CountryList" 
+          component={Countries}          
         />
         <Stack.Screen 
-          name="RestaurantList" 
-          component={Restaurants} 
+          name="MetropolisList" 
+          component={Metropolis} 
         />
       </Stack.Navigator>
     </NavigationContainer>
