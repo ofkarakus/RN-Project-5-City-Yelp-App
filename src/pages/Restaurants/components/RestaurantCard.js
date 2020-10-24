@@ -8,9 +8,13 @@ import {
   Dimensions,
 } from 'react-native';
 
-const RestaurantCard = ({item}) => {
+const RestaurantCard = ({item, onSelect}) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => {
+        onSelect();
+      }}>
       <View>
         <Image source={{uri: item.image_url}} style={styles.image} />
       </View>
@@ -36,13 +40,13 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width * 0.8,
     height: Dimensions.get('window').height * 0.4,
   },
-  text:{
+  text: {
     color: 'white',
     fontWeight: 'bold',
     alignSelf: 'flex-start',
     marginLeft: 20,
-    marginVertical: 5
-  }
+    marginVertical: 5,
+  },
 });
 
 export default RestaurantCard;

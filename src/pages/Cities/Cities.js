@@ -1,23 +1,19 @@
 import React, {useState, useEffect} from 'react';
-import {
-  SafeAreaView,
-  View,
-  Text,
-  TextInput,
-  FlatList,
-} from 'react-native';
+import {SafeAreaView, View, Text, TextInput, FlatList} from 'react-native';
 
 import CityCard from './components/CityCard';
 import styles from './styles/styles';
 
-
 const displayInitialList = (arr) => {
-
-  let cityList = []
+  let cityList = [];
 
   function compare(a, b) {
-    if (a.city < b.city) {return -1;}
-    if (a.city > b.city) {return 1;}
+    if (a.city < b.city) {
+      return -1;
+    }
+    if (a.city > b.city) {
+      return 1;
+    }
     return 0;
   }
   arr.forEach((x) => {
@@ -26,34 +22,31 @@ const displayInitialList = (arr) => {
     }
   });
   return cityList.sort(compare);
-}
-
+};
 
 const Cities = (props) => {
-
-  const [myData, setMyData] = useState([])
-  const [filteredData, setFilteredData] = useState([])
+  const [myData, setMyData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
 
   const [inputValue, setInputValue] = useState('');
 
+  useEffect(() => {
+    fetch('https://opentable.herokuapp.com/api/restaurants?country=US')
+      .then((response) => response.json())
+      .then((response) => {
+        setMyData(displayInitialList(response.restaurants));
+        setFilteredData(displayInitialList(response.restaurants));
+      });
+  }, []);
 
-  useEffect(()=> {
-      fetch('https://opentable.herokuapp.com/api/restaurants?country=US')
-        .then((response) => response.json())
-        .then(response => {
-          setMyData(displayInitialList(response.restaurants))
-          setFilteredData(displayInitialList(response.restaurants))
-        })
-    },[])
-
-    
   const renderCities = ({item}) => (
-    <CityCard 
-      item={item} 
-      onSelect= {()=> props.navigation.navigate('RestaurantList', {selectedCity : item.city})}
+    <CityCard
+      item={item}
+      onSelect={() =>
+        props.navigation.navigate('RestaurantList', {selectedCity: item.city})
+      }
     />
   );
-
 
   useEffect(() => {
     setFilteredData(

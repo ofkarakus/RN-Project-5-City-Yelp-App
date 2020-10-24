@@ -13,11 +13,17 @@ import RestaurantCard from './components/RestaurantCard';
 import styles from './styles/styles';
 
 const Restaurants = (props) => {
-
   const [myData, setMyData] = useState([]);
-  const [filteredData, setFilteredData] = useState([])
+  const [filteredData, setFilteredData] = useState([]);
 
-  const renderRestaurants = ({item}) => <RestaurantCard item={item} />;
+  const renderRestaurants = ({item}) => (
+    <RestaurantCard
+      item={item}
+      onSelect={() => {
+        props.navigation.navigate('InfoPage', {selectedRestaurant: item});
+      }}
+    />
+  );
 
   const selectedCity = props.route.params.selectedCity;
 
@@ -34,12 +40,11 @@ const Restaurants = (props) => {
   }, []);
 
   useEffect(() => {
-
     setFilteredData(
       myData.filter((x) => {
         let lowercaseRestaurant = x.name.toLowerCase();
         let lowercaseInputValue = inputValue.toLowerCase();
-        return lowercaseRestaurant.indexOf(lowercaseInputValue) > -1
+        return lowercaseRestaurant.indexOf(lowercaseInputValue) > -1;
       }),
     );
   }, [inputValue]);
@@ -62,7 +67,9 @@ const Restaurants = (props) => {
         <TextInput
           style={styles.input}
           placeholder="Search a restaurant.."
-          onChangeText={(value)=> {setInputValue(value)}}
+          onChangeText={(value) => {
+            setInputValue(value);
+          }}
         />
       </View>
       <FlatList

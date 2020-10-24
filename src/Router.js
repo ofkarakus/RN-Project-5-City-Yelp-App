@@ -2,7 +2,7 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {Cities, Restaurants} from './pages';
+import {Cities, Restaurants, Info} from './pages';
 
 const Stack = createStackNavigator();
 
@@ -12,17 +12,11 @@ const Router = () => {
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
-          gestureEnabled: true
-        }}
-      >
-        <Stack.Screen 
-          name="CityList" 
-          component={Cities}          
-        />
-        <Stack.Screen 
-          name="RestaurantList" 
-          component={Restaurants} 
-        />
+          gestureEnabled: true,
+        }}>
+        <Stack.Screen name="CityList" component={Cities} />
+        <Stack.Screen name="RestaurantList" component={Restaurants} />
+        <Stack.Screen name="InfoPage" component={Info} />
       </Stack.Navigator>
     </NavigationContainer>
   );
