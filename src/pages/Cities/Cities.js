@@ -1,5 +1,6 @@
+import axios from 'axios';
 import React, {useState, useEffect} from 'react';
-import {SafeAreaView, View, Text, TextInput, FlatList} from 'react-native';
+import {SafeAreaView, View, Text, TextInput, FlatList, ActivityIndicator} from 'react-native';
 
 import CityCard from './components/CityCard';
 import styles from './styles/styles';
@@ -24,19 +25,29 @@ const displayInitialList = (arr) => {
   return cityList.sort(compare);
 };
 
-const Cities = (props) => {
-  const [myData, setMyData] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
+let originalList = [];
 
+const Cities = (props) => {
+  const [filteredData, setFilteredData] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const [isLoading, setIsLoading] = useState(true)
+
+  const itemSeperator = () => (
+    <View style={{borderColor: 'lightgray', borderWidth: 1}} />
+  );
+
+  const fetchData = () => {
+    axios
+      .get('https://opentable.herokuapp.com/api/restaurants?country=US')
+      .then((response) => {
+        originalList = [...displayInitialList(response.data.restaurants)];
+        setFilteredData(displayInitialList(response.data.restaurants));
+        setIsLoading(false)
+      });
+  };
 
   useEffect(() => {
-    fetch('https://opentable.herokuapp.com/api/restaurants?country=US')
-      .then((response) => response.json())
-      .then((response) => {
-        setMyData(displayInitialList(response.restaurants));
-        setFilteredData(displayInitialList(response.restaurants));
-      });
+    fetchData();
   }, []);
 
   const renderCities = ({item}) => (
@@ -50,7 +61,7 @@ const Cities = (props) => {
 
   useEffect(() => {
     setFilteredData(
-      myData.filter((x) => {
+      originalList.filter((x) => {
         let lowercaseCity = x.city.toLowerCase();
         let lowercaseInputValue = inputValue.toLowerCase();
         return lowercaseCity.startsWith(lowercaseInputValue);
@@ -61,7 +72,6 @@ const Cities = (props) => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.text}>Choose a city</Text>
-
       <View style={styles.inputView}>
         <TextInput
           style={styles.input}
@@ -71,11 +81,17 @@ const Cities = (props) => {
           }}
         />
       </View>
-      <FlatList
-        keyExtractor={(_, index) => index.toString()}
-        data={filteredData}
-        renderItem={renderCities}
-      />
+
+      {   
+        isLoading ? 
+          <ActivityIndicator color='gray' size='large' style={{alignItems: 'center', marginTop: 200 }} /> : 
+          <FlatList
+            keyExtractor={(_, index) => index.toString()}
+            data={filteredData}
+            renderItem={renderCities}
+            ItemSeparatorComponent={itemSeperator}
+          />
+      }
     </SafeAreaView>
   );
 };

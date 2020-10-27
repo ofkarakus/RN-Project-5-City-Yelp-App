@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import {
   SafeAreaView,
@@ -5,16 +6,20 @@ import {
   Text,
   TextInput,
   FlatList,
-  TouchableOpacity,
+  ActivityIndicator,
 } from 'react-native';
 
 import RestaurantCard from './components/RestaurantCard';
 
 import styles from './styles/styles';
 
+let originalData = []
+
 const Restaurants = (props) => {
-  const [myData, setMyData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
+  const {selectedCity} = props.route.params;
+  const [inputValue, setInputValue] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
   const renderRestaurants = ({item}) => (
     <RestaurantCard
@@ -25,23 +30,21 @@ const Restaurants = (props) => {
     />
   );
 
-  const selectedCity = props.route.params.selectedCity;
+  const fetchData = async () => {
+    const response = await axios.get('https://opentable.herokuapp.com/api/restaurants?country=US', {params : { city : selectedCity }})
 
-  const [inputValue, setInputValue] = useState('');
+    originalData = [...response.data.restaurants]
+    setFilteredData(response.data.restaurants)
+    setIsLoading(false)
+  }
 
   useEffect(() => {
-    fetch('https://opentable.herokuapp.com/api/restaurants?country=US')
-      .then((response) => response.json())
-      .then((response) => {
-        const data = response.restaurants.filter((x) => x.city == selectedCity);
-        setMyData(data);
-        setFilteredData(data);
-      });
+    fetchData()
   }, []);
 
   useEffect(() => {
     setFilteredData(
-      myData.filter((x) => {
+      originalData.filter((x) => {
         let lowercaseRestaurant = x.name.toLowerCase();
         let lowercaseInputValue = inputValue.toLowerCase();
         return lowercaseRestaurant.indexOf(lowercaseInputValue) > -1;
@@ -51,18 +54,7 @@ const Restaurants = (props) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity
-          style={styles.backBtn}
-          onPress={() => {
-            props.navigation.navigate('CityList');
-          }}>
-          <Text style={styles.backBtnText}>Cities</Text>
-        </TouchableOpacity>
-
-        <Text style={styles.text}>{selectedCity} Restaurants</Text>
-      </View>
-
+      <Text style={styles.text}>{selectedCity} Restaurants</Text>
       <View style={styles.inputView}>
         <TextInput
           style={styles.input}
@@ -72,11 +64,16 @@ const Restaurants = (props) => {
           }}
         />
       </View>
-      <FlatList
-        keyExtractor={(_, index) => index.toString()}
-        data={filteredData}
-        renderItem={renderRestaurants}
-      />
+      {
+        isLoading ?
+          <ActivityIndicator size='large' color='gray' style={{alignItems: 'center', marginTop: 200}} />
+          :
+          <FlatList
+          keyExtractor={(_, index) => index.toString()}
+          data={filteredData}
+          renderItem={renderRestaurants}
+        />
+      }
     </SafeAreaView>
   );
 };

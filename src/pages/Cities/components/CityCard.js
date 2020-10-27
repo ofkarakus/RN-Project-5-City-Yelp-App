@@ -15,8 +15,6 @@ const CityCard = ({item, onSelect}) => {
 
 const styles = StyleSheet.create({
   container: {
-    borderBottomWidth: 1,
-    borderBottomColor: 'lightgray',
     padding: 5,
     alignItems: 'center',
     justifyContent: 'center'

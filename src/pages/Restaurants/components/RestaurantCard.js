@@ -15,11 +15,15 @@ const RestaurantCard = ({item, onSelect}) => {
       onPress={() => {
         onSelect();
       }}>
-      <View>
-        <Image source={{uri: item.image_url}} style={styles.image} />
-      </View>
+      
+      <Image source={{uri: item.image_url}} style={styles.image} />
 
-      <Text style={styles.text}>{item.name}</Text>
+      <View style={styles.namePrice}>
+        <Text style={styles.name}>{item.name}</Text>
+        <Text style={styles.price}>
+          {"⭐".repeat(item.price)}
+        </Text>
+      </View>
     </TouchableOpacity>
   );
 };
@@ -31,22 +35,37 @@ const styles = StyleSheet.create({
     padding: 5,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#dc2f02',
+    backgroundColor: '#ef5350',
     margin: 10,
+    paddingHorizontal: 15,
+    paddingVertical: 10,
     elevation: 5,
     borderRadius: 5,
   },
   image: {
-    width: Dimensions.get('window').width * 0.8,
-    height: Dimensions.get('window').height * 0.4,
+    width: '100%',
+    height: Dimensions.get('window').height * 0.35,
   },
-  text: {
-    color: 'white',
+  namePrice: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 5,
+  },
+  name: {
+    color: '#fffde7',
     fontWeight: 'bold',
-    alignSelf: 'flex-start',
-    marginLeft: 20,
-    marginVertical: 5,
+    flexWrap: 'wrap',
+    maxWidth: '70%'
   },
+  price: {
+    fontWeight: 'bold',
+    fontSize: 12,
+    alignSelf: 'flex-end',
+    color: 'yellow',
+    fontSize: 27
+  }
 });
 
 export default RestaurantCard;

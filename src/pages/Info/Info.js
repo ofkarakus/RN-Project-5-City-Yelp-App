@@ -6,6 +6,8 @@ import {
   SafeAreaView,
   Image,
   Dimensions,
+  TouchableOpacity,
+  Linking
 } from 'react-native';
 import { color } from 'react-native-reanimated';
 
@@ -24,33 +26,36 @@ const Info = (props) => {
 
         <Text style={styles.name}>{selectedRestaurant.name}</Text>
 
-        <View style={styles.location}>
+        <TouchableOpacity style={styles.location}>
           <Image
             source={require('../../assets/pin.png')}
             style={styles.locationImg}
           />
           <Text style={styles.locationText}>{selectedRestaurant.area}</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.location}>
+        <TouchableOpacity style={styles.location}>
           <Image
             source={require('../../assets/home.png')}
             style={styles.locationImg}
           />
           <Text style={styles.locationText}>{selectedRestaurant.address}</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.location}>
+        <TouchableOpacity style={styles.location}>
           <Image
             style={styles.locationImg}
             source={require('../../assets/phone-call.png')}
           />
           <Text style={styles.locationText}>{selectedRestaurant.phone}</Text>
-        </View>
+        </TouchableOpacity>
       </View>
-
-      <View style={styles.blank}></View>
-      <Text style={styles.reservation}>Make Reservation</Text>
+      <TouchableOpacity
+        onPress={()=> {Linking.openURL(selectedRestaurant.reserve_url)}}
+        style={styles.reserveBtn}
+      >
+        <Text style={styles.reservation}>Reserve Now</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -94,12 +99,21 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   container: {
+    flex: 1,
     justifyContent:'space-between'
   },
   reservation: {
     alignSelf: 'center',
-    marginTop: 90,
-    color: '#ef5350',
-    fontWeight: 'bold'
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
+  reserveBtn: {
+    alignSelf: 'center',
+    backgroundColor: '#ef5350',
+    marginBottom: 20,
+    width: 140,
+    padding: 5,
+    borderRadius: 10
   }
 });
