@@ -1,43 +1,68 @@
-# Project-011 : City-Yelp App (RN-04)
+<div id="readme" class="Box md js-code-block-container Box--responsive">
+      <div class="Box-body px-5 pb-5">
+        <article class="markdown-body entry-content container-lg" itemprop="text"><h1 align="center"><a id="user-content-sdrn_02_double_click_to_like" class="anchor" aria-hidden="true" href="#sdrn_02_double_click_to_like"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>RN-Project-05-City-Yelp-App</h1>
+<div align="center">
+  <h3><a id="user-content-----------project-source------" class="anchor" aria-hidden="true" href="#----------project-source------"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>
+    <a href="https://github.com/ofkarakus/RN-Project-5-City-Yelp-App">
+      Project Source
+    </a>
+  </h3>
+</div>
 
-## Description
+<h2><a id="user-content-table-of-contents" class="anchor" aria-hidden="true" href="#table-of-contents"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Table of Contents</h2>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#built-with">Built With</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#how-to-use">How to use</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-Project aims to create Yelp Alternative Application with React Native.
+<h2><a id="user-content-overview" class="anchor" aria-hidden="true" href="#overview"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Overview</h2>
+   
+   <img width=300 src="https://github.com/ofkarakus/RN-Project-5-City-Yelp-App/blob/master/images/001.png" />
+   <img width=300 src="https://github.com/ofkarakus/RN-Project-5-City-Yelp-App/blob/master/images/002.png" />
+   <img width=300 src="https://github.com/ofkarakus/RN-Project-5-City-Yelp-App/blob/master/images/003.jpg" />
+          
+<h3><a id="user-content-built-with" class="anchor" aria-hidden="true" href="#built-with"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Built With</h3>
 
-## Problem Statement
+<ul>
+<li><a href="https://reactnative.dev/" rel="nofollow">React Native</a></li>
+</ul>
+<h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Features</h2>
+<ul>
+<li>When the user run the application it is shown that loading indicator center of screen.</li>
+<li>User can scroll down and up to see a list of cities and search a city in search bar. Source is pulled from 'https://opentable.herokuapp.com/api/cities'</li>
+<li>When the user tap on the any city, resaurant lists are displayed on the screen with limited details.</li>
+<li>User can scroll down and up to see a list of restaurants which belongs to tapped city before. There is a search bar which allow us search a restaurant from the list. Source is pulled from 'http://opentable.herokuapp.com/api/restaurants'</li>
+<li>After tap on a restaurant object, the restaurant details are displayed on the screen.</li>
+<li>When clicked on a 'button' of 'Go to Reservation'; redirected to the restaurant page.</li>
+</ul>
+<h2><a id="user-content-how-to-use" class="anchor" aria-hidden="true" href="#how-to-use"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>How To Use</h2>
+<p>To use this application, necessary components are demonstrated as below. From your command line:</p>
+<div class="highlight highlight-source-shell"><pre>$ npm install @react-navigation/native
+</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ npm install @react-navigation/stack
+</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ npm install axios
+</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ npm i react-native-webview
+</pre></div>
+<h2><a id="user-content-acknowledgements" class="anchor" aria-hidden="true" href="#acknowledgements"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Acknowledgements</h2>
 
-- Your company has recently started on a project that aims to create an alternative to Yelp Application for the municipal usage. So you and your colleagues have started to work on the project.
+<ul>
+<li><a href="https://reactnavigation.org/" rel="nofollow">React Navigation</a></li>
+<li><a href="https://github.com/react-native-webview/react-native-webview" rel="nofollow">RN WebView</a></li>
+<li><a href="https://github.com/axios/axios#axios-api" rel="nofollow">axios API</a></li>
+</ul>
+<h2><a id="user-content-contact" class="anchor" aria-hidden="true" href="#contact"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Contact</h2>
 
-## Expected Outcome
-
-![Project 000 Snapshot](./images/001.png)
-
-![Project 000 Snapshot](./images/002.png)
-
-![Project 000 Snapshot](./images/003.jpg)
-
-### At the end of the project, following topics are to be covered;
-
-- HTML
-
-- CSS
-
-- JS
-
-- React Native
-
-### At the end of the project, students will be able to;
-
-- improve coding skills within HTML & CSS & JS & React Native.
-
-- use git commands (push, pull, commit, add etc.) and Github as Version Control System.
-
-## Steps to Solution
-
-- Step 1: Download or clone project repo on Github
-
-- Step 2: Create project folder for local public repo on your pc
-
-- Step 3: Create News Page with React Native.
-
-**<p align="center">&#9786; Happy Coding &#9997;</p>**
+<ul>
+  <li>LinkedIn: <a href="https://www.linkedin.com/in/omer-karakus/" rel="nofollow">@OmerKarakus</a></li>
+  <li>omerfarukkarakus01@gmail.com</li>
+</ul>    
+          
+</article>
+</div>
+</div>
